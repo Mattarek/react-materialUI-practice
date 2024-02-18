@@ -9,6 +9,20 @@ import {
 } from '@mui/material';
 import { Box } from '@mui/system';
 
+interface Tour {
+    id: number;
+    name: string;
+    duration: number;
+    rating: number;
+    numberOfReviews: number;
+    price: number;
+    image: string;
+}
+
+interface TourProps {
+    tour: Tour;
+}
+
 const theme = createTheme({
     components: {
         MuiTypography: {
@@ -34,7 +48,9 @@ const theme = createTheme({
     },
 });
 
-export const Card = ({ tour }) => {
+export const Card = ({
+    tour: { image, name, duration, rating, numberOfReviews, price },
+}: TourProps) => {
     return (
         <Grid
             item
@@ -45,7 +61,7 @@ export const Card = ({ tour }) => {
                     elevation={3}
                     className='paper'>
                     <img
-                        src={tour.image}
+                        src={image}
                         alt='Img from tour'
                         className='img'
                     />
@@ -53,7 +69,7 @@ export const Card = ({ tour }) => {
                         <Typography
                             variant='subtitle1'
                             component='h2'>
-                            {tour.name}
+                            {name}
                         </Typography>
                         <Box
                             sx={{
@@ -65,7 +81,7 @@ export const Card = ({ tour }) => {
                                 variant='body2'
                                 component='p'
                                 marginLeft={0.5}>
-                                {tour.duration} hours
+                                {duration} hours
                             </Typography>
                         </Box>
                         <Box
@@ -77,7 +93,7 @@ export const Card = ({ tour }) => {
                             <Rating
                                 name='size-small'
                                 size='small'
-                                defaultValue={tour.rating}
+                                defaultValue={rating}
                                 precision={0.25}
                                 readOnly
                             />
@@ -85,13 +101,13 @@ export const Card = ({ tour }) => {
                                 variant='body2'
                                 component='p'
                                 marginLeft={0.5}>
-                                {tour.rating}
+                                {rating}
                             </Typography>
                             <Typography
                                 variant='body2'
                                 component='p'
                                 marginLeft={1.5}>
-                                ({tour.numberOfReviews} reviews)
+                                ({numberOfReviews} reviews)
                             </Typography>
                         </Box>
                         <Box
@@ -102,7 +118,7 @@ export const Card = ({ tour }) => {
                                 variant='h6'
                                 component='h2'
                                 marginTop={0}>
-                                From C ${tour.price}
+                                From C ${price}
                             </Typography>
                         </Box>
                     </Box>

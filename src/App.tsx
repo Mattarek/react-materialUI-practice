@@ -1,16 +1,18 @@
+import { Home } from '@mui/icons-material';
 import './styles/global.scss';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Layout />,
-        children: [],
-    },
-]);
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-    return <div></div>;
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route
+                    path='/'
+                    element={<Home />}
+                />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
