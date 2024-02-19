@@ -10,10 +10,11 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { mainNavbarItems } from '../constants/navbarItems';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
     const drawerWidth = 240;
-
+    const navigate = useNavigate();
     return (
         <Drawer
             variant='permanent'
@@ -31,10 +32,11 @@ export const Navbar = () => {
             <Toolbar />
             <Box sx={{ overflow: 'auto' }}>
                 <List>
-                    {mainNavbarItems.map(({ id, label }) => (
+                    {mainNavbarItems.map(({ id, label, route }) => (
                         <ListItem
                             key={id}
-                            disablePadding>
+                            disablePadding
+                            onClick={() => navigate(route)}>
                             <ListItemButton>
                                 <ListItemIcon
                                     sx={{ color: 'rgba(255, 255, 255,0.7)' }}>

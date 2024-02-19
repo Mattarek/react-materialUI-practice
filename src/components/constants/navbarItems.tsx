@@ -1,6 +1,13 @@
+import PeopleIcon from '@mui/icons-material/People';
+import DnsIcon from '@mui/icons-material/Dns';
+import ImageIcon from '@mui/icons-material/Image';
+import PublicIcon from '@mui/icons-material/Public';
+import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
+import SettingsInputComponentsIcon from '@mui/icons-material/SettingsInputComponent';
+
 export interface NavbarItem {
     id: number;
-    icon: string;
+    icon: React.ReactNode;
     label: string;
     route: string;
 }
@@ -8,38 +15,38 @@ export interface NavbarItem {
 export const mainNavbarItems: NavbarItem[] = [
     {
         id: 0,
-        icon: '',
+        icon: <PeopleIcon />,
         label: 'Authentication',
-        route: 'route',
+        route: 'authentication',
     },
     {
         id: 1,
-        icon: '',
-        label: 'Authentication',
-        route: 'route',
+        icon: <DnsIcon />,
+        label: 'Database',
+        route: 'database',
     },
     {
         id: 2,
-        icon: '',
-        label: 'Authentication',
-        route: 'route',
+        icon: <ImageIcon />,
+        label: 'Storage',
+        route: 'storage',
     },
     {
         id: 3,
-        icon: '',
-        label: 'Authentication',
-        route: 'route',
+        icon: <PublicIcon />,
+        label: 'Hosting',
+        route: 'hosting',
     },
     {
         id: 4,
-        icon: '',
-        label: 'Authentication',
-        route: 'route',
+        icon: <SettingsEthernetIcon />,
+        label: 'Functions',
+        route: 'functions',
     },
     {
         id: 5,
-        icon: '',
-        label: 'Authentication',
-        route: 'route',
+        icon: <SettingsInputComponentsIcon />,
+        label: 'Machine learning',
+        route: 'machinelLearning',
     },
 ];
