@@ -23,6 +23,8 @@ export const Navbar = () => {
                 [`& .MuiDrawer-paper`]: {
                     width: drawerWidth,
                     boxSizing: 'border-box',
+                    backgroundColor: '#101F33',
+                    color: 'rgba(255, 255, 255,0.7)',
                 },
             }}
             anchor='left'>
@@ -34,7 +36,8 @@ export const Navbar = () => {
                             key={id}
                             disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
+                                <ListItemIcon
+                                    sx={{ color: 'rgba(255, 255, 255,0.7)' }}>
                                     {id % 2 === 0 ? (
                                         <InboxIcon />
                                     ) : (
