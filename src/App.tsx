@@ -1,15 +1,13 @@
-import { Button } from '@mui/material';
 import { Navbar } from './components/Navbar/Navbar';
+import { Outlet } from 'react-router-dom';
+import { Grid } from '@mui/material/';
+
 function App() {
     return (
-        <div>
-            <Button
-                variant='outlined'
-                onClick={() => console.log('Hi!')}>
-                Click!
-            </Button>
+        <Grid container>
             <Navbar />
-        </div>
+            <Outlet />
+        </Grid>
     );
 }
 
