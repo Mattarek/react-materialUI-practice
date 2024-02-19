@@ -4,6 +4,8 @@ import App from './App.tsx';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Authentication } from './views/Authentication.tsx';
 import { Database } from './views/Database.tsx';
+import { ThemeProvider } from '@emotion/react';
+import { dashboardTheme } from './dashboardTheme.tsx';
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <RouterProvider router={router}></RouterProvider>
+        <ThemeProvider theme={dashboardTheme}>
+            <RouterProvider router={router}></RouterProvider>
+        </ThemeProvider>
     </React.StrictMode>,
 );
