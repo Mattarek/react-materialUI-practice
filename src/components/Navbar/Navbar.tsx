@@ -32,7 +32,7 @@ export const Navbar = () => {
             <Toolbar />
             <Box sx={{ overflow: 'auto' }}>
                 <List>
-                    {mainNavbarItems.map(({ id, label, route }) => (
+                    {mainNavbarItems.map(({ id, label, route, icon }) => (
                         <ListItem
                             key={id}
                             disablePadding
@@ -40,11 +40,7 @@ export const Navbar = () => {
                             <ListItemButton>
                                 <ListItemIcon
                                     sx={{ color: 'rgba(255, 255, 255,0.7)' }}>
-                                    {id % 2 === 0 ? (
-                                        <InboxIcon />
-                                    ) : (
-                                        <MailIcon />
-                                    )}
+                                    {icon}
                                 </ListItemIcon>
                                 <ListItemText primary={label} />
                             </ListItemButton>
