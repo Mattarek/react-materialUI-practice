@@ -1,12 +1,10 @@
-import React from 'react';
 import { Menu, MenuItem } from '@mui/material';
 
-export const BasicMenu = ({ anchorEl, handleClose, open }) => {
+export const BasicMenu = ({ handleClose, open }) => {
     return (
         <div>
             <Menu
                 id='basic-menu'
-                anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
                 MenuListProps={{

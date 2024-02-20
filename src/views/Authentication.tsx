@@ -5,14 +5,12 @@ import { BasicMenu } from '../components/BasicMenu/BasicMenu';
 
 export const Authentication = () => {
     const [open, setOpen] = React.useState(false);
-    const [anchorEl, setAnchorEl] = React.useState(null);
 
-    const handleOpen = (event: any) => {
-        setAnchorEl(event?.currentTarget);
+    const handleOpen = () => {
         setOpen(true);
     };
 
-    const handleClose = (event: any) => {
+    const handleClose = () => {
         setOpen(false);
     };
 
@@ -24,11 +22,9 @@ export const Authentication = () => {
             <Notifications
                 iconColor='primary'
                 badgeContent={0}
-                anchorEl={anchorEl}
-                onClick={() => console.log('click')}
+                handleOpen={handleOpen}
             />
             <BasicMenu
-                anchorEl={anchorEl}
                 open={open}
                 handleClose={handleClose}
             />
