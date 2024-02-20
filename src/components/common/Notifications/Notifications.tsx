@@ -22,8 +22,11 @@ export const Notifications = ({
     iconColor,
     badgeContent,
 }: NotificationsProps) => {
+    const newNotifications = `You have ${badgeContent} new notifications!`;
+    const noNotifications = `No new notifications`;
+
     return (
-        <Tooltip title={`You have ${badgeContent} new notifications!`}>
+        <Tooltip title={badgeContent ? newNotifications : noNotifications}>
             <IconButton color={iconColor}>
                 <Badge
                     badgeContent={badgeContent}
