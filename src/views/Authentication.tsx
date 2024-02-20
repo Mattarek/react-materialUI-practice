@@ -1,5 +1,6 @@
 import Grid from '@mui/material/Grid';
 import { Notifications } from '../components/common/Notifications/Notifications';
+import { BasicMenu } from '../components/BasicMenu/BasicMenu';
 
 export const Authentication = () => {
     return (
@@ -8,9 +9,10 @@ export const Authentication = () => {
             xs={8}>
             This is authentication page.
             <Notifications
-                iconColor='error'
-                badgeContent={4}
+                iconColor='primary'
+                badgeContent={0}
             />
+            <BasicMenu />
         </Grid>
     );
 };
