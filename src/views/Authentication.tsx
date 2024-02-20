@@ -1,4 +1,4 @@
-import { Notifications } from '@mui/icons-material';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import Grid from '@mui/material/Grid';
 
 export const Authentication = () => {
@@ -7,7 +7,10 @@ export const Authentication = () => {
             item
             xs={8}>
             This is authentication page.
-            <Notifications />
+            <NotificationsIcon
+                iconColor='error'
+                badgeContent={4}
+            />
         </Grid>
     );
 };
