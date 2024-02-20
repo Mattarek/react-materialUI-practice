@@ -1,8 +1,21 @@
+import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Notifications } from '../components/common/Notifications/Notifications';
 import { BasicMenu } from '../components/BasicMenu/BasicMenu';
 
 export const Authentication = () => {
+    const [open, setOpen] = React.useState(false);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleOpen = (event: any) => {
+        setAnchorEl(event?.currentTarget);
+        setOpen(true);
+    };
+
+    const handleClose = (event: any) => {
+        setOpen(false);
+    };
+
     return (
         <Grid
             item
@@ -11,8 +24,14 @@ export const Authentication = () => {
             <Notifications
                 iconColor='primary'
                 badgeContent={0}
+                anchorEl={anchorEl}
+                onClick={() => console.log('click')}
             />
-            <BasicMenu />
+            <BasicMenu
+                anchorEl={anchorEl}
+                open={open}
+                handleClose={handleClose}
+            />
         </Grid>
     );
 };
