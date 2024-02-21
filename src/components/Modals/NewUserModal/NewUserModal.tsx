@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import BasicModal from '../../common/BasicModal/BasicModal';
 import { Box, TextField } from '@mui/material/Box';
 import { useForm } from 'react-hook-form';
@@ -95,7 +95,7 @@ export const NewUserModal = () => {
                 error={errors.phoneNumber ? true : false}
                 helperText={errors.phoneNumber?.message}
                 value={values.phoneNumber}
-                onChange={(event) =>
+                onChange={(event: Event) =>
                     handleChange({ ...values, phoneNumber: event.target.value })
                 }
             />
