@@ -16,7 +16,6 @@ type IconColor =
 interface NotificationsProps {
     iconColor: IconColor;
     badgeContent: number;
-    onClick: () => void;
     handleOpen: () => void;
 }
 

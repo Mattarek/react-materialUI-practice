@@ -1,6 +1,11 @@
 import { Menu, MenuItem } from '@mui/material';
 
-export const BasicMenu = ({ handleClose, open }) => {
+interface BasicMenuProps {
+    open: boolean;
+    handleClose: () => void;
+}
+
+export const BasicMenu = ({ handleClose, open }: BasicMenuProps) => {
     return (
         <div>
             <Menu
