@@ -4,6 +4,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
+interface BasicModalProps {
+    open: boolean;
+    setClose: (boolean: boolean) => void;
+}
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -16,8 +21,7 @@ const style = {
     p: 4,
 };
 
-export const BasicModal = () => {
-    const [open, setOpen] = React.useState(false);
+export const BasicModal = ({ open, setOpen }: BasicModalProps) => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
