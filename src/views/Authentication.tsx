@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Notifications } from '../components/common/Notifications/Notifications';
 import { BasicMenu } from '../components/BasicMenu/BasicMenu';
+import { BasicModal } from '../components/Modal/Modal';
 
 export const Authentication = () => {
     const [open, setOpen] = React.useState(false);
@@ -28,6 +29,7 @@ export const Authentication = () => {
                 open={open}
                 handleClose={handleClose}
             />
+            <BasicModal />
         </Grid>
     );
 };
