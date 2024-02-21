@@ -1,16 +1,31 @@
-import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import CommonButton from '../CommonButton/CommonButton';
-import { modalStyles } from './styles';
+import { CustomIconButton } from '../CustomIconButton/CustomIconButton';
 
-const BasicModal = ({ open, onClose, title, subTitle, content, onSubmit }) => {
+export const BasicModal = ({
+    open,
+    onClose,
+    title,
+    subTitle,
+    content,
+    onSubmit,
+}) => {
     return (
         <Modal
             open={open}
             onClose={onClose}>
-            <Box sx={modalStyles.wrapper}>
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: 300,
+                    bgcolor: 'background.paper',
+                    boxShadow: 24,
+                    p: 4,
+                }}>
                 <Typography
                     variant='h6'
                     component='h2'>
@@ -18,17 +33,17 @@ const BasicModal = ({ open, onClose, title, subTitle, content, onSubmit }) => {
                 </Typography>
                 <Typography sx={{ mt: 2 }}>{subTitle}</Typography>
                 {content}
-                <Box sx={modalStyles.buttons}>
-                    <CommonButton
+                <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+                    <CustomIconButton
                         variant='contained'
                         onClick={onSubmit}>
                         Submit
-                    </CommonButton>
-                    <CommonButton onClick={onClose}>Cancel</CommonButton>
+                    </CustomIconButton>
+                    <CustomIconButton onClick={onClose}>
+                        Cancel
+                    </CustomIconButton>
                 </Box>
             </Box>
         </Modal>
     );
 };
-
-export default BasicModal;
