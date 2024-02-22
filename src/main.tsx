@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Authentication } from './views/Authentication.tsx';
 import { Database } from './views/Database.tsx';
 import { ThemeProvider } from '@emotion/react';
+import { DataGridDemo } from './components/DataGrid/DataGrid.tsx';
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
             { path: '/machinelLearning', element: <Authentication /> },
         ],
     },
+    { path: '/dataGrid', element: <DataGridDemo /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
