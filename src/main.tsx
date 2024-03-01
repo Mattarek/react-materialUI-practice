@@ -16,10 +16,7 @@ const router = createBrowserRouter([
             { path: '/authentication', element: <Authentication /> },
             { path: '/database', element: <Database /> },
             { path: '/storage', element: <Authentication /> },
-            { path: '/hosting', element: <Authentication /> },
-            { path: '/functions', element: <Authentication /> },
-            { path: '/machinelLearning', element: <Authentication /> },
-        ],
+            { path: '/hosting', element: <Authentication /> }
     },
     { path: '/dataGrid', element: <DataGridDemo /> },
 ]);
