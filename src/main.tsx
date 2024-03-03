@@ -15,7 +15,8 @@ const router = createBrowserRouter([
         children: [
             { path: '/authentication', element: <Authentication /> },
             { path: '/database', element: <Database /> },
-
+            { path: '/storage', element: <Authentication /> },
+            { path: '/hosting', element: <Authentication /> },
             { path: '/functions', element: <Authentication /> },
             { path: '/machinelLearning', element: <Authentication /> },
         ],
